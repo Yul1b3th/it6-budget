@@ -1,0 +1,251 @@
+<!-- budgets-list.component.html -->
+<div class="container my-5">
+  <form [formGroup]="budgetForm" (ngSubmit)="submitBudget()">
+    <!-- Servicios -->
+    <div class="card-services mx-auto">
+      <!-- Servicio Seo -->
+      <div class="service-item shadow rounded-4 p-3 p-md-5 state-item"
+        [class.service-item-selected]="isChecked('seoCampaign')"
+        [ngClass]="{'is-invalid-check': showError && !seoCampaignState && !isCheckboxSelected}">
+        <div class="service-info">
+          <div class="service-text pe-md-3">
+            <h2>Seo</h2>
+            <p>Programació d'una web responsive completa</p>
+          </div>
+
+          <div class="service-price">
+            300 <span class="euro">€</span>
+          </div>
+
+          <div class="service-check form-check ms-3">
+            <input type="checkbox" class="form-check-input state-item" id="idSeoCampaign" formControlName="seoCampaign"
+              [ngClass]="{'is-invalid': showError && !seoCampaignState, 'is-valid': seoCampaignState}"
+              (change)="onCheckboxChange($event)">
+            <label class="form-check-label" for="idSeoCampaign">Afegir</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Servicio Ads -->
+      <div class="service-item shadow rounded-4 p-3 p-md-5 state-item"
+        [class.service-item-selected]="isChecked('adsCampaign')"
+        [ngClass]="{'is-invalid-check': showError && !seoCampaignState && !isCheckboxSelected}">
+        <div class="service-info">
+          <div class="service-text pe-md-3">
+            <h2>Ads</h2>
+            <p>Programació d'una web responsive completa</p>
+          </div>
+
+          <div class="service-price">
+            400 <span class="euro">€</span>
+          </div>
+
+          <div class="service-check form-check ms-3">
+            <input type="checkbox" class="form-check-input state-item" id="idAdsCampaign" formControlName="adsCampaign"
+              [ngClass]="{'is-invalid': showError && !adsCampaignState, 'is-valid': adsCampaignState}"
+              (change)="onCheckboxChange($event)">
+            <label class="form-check-label" for="idAdsCampaign">Afegir</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Servicio Web -->
+      <div class="service-item shadow rounded-4 p-3 p-md-5 state-item"
+        [class.service-item-selected]="isChecked('webCampaign')"
+        [ngClass]="{'is-invalid-check': showError && !seoCampaignState && !isCheckboxSelected}">
+        <div class="service-info">
+          <div class="service-text pe-md-3">
+            <h2>Web</h2>
+            <p>Programació d'una web responsive completa</p>
+          </div>
+
+          <div class="service-price">
+            500 <span class="euro">€</span>
+          </div>
+
+          <div class="service-check form-check ms-3">
+            <input type="checkbox" class="form-check-input state-item" id="idWebCampaign" formControlName="webCampaign"
+              [ngClass]="{'is-invalid': showError && !webCampaignState, 'is-valid': webCampaignState}"
+              (change)="onCheckboxChange($event)">
+            <label class="form-check-label" for="idWebCampaign">Afegir</label>
+          </div>
+        </div>
+
+        <!-- Panel (Mostrar solo si webCampaign está seleccionado) -->
+        @if(budgetForm.get('webCampaign')?.value) {
+        <div class="panel-info">
+          <app-panel [budgetForm]="budgetForm" (sendForm)="handleFormPanel($event)"></app-panel>
+        </div>
+        }
+      </div>
+
+    </div>
+
+    <!-- Total Servicios -->
+    <div class="budget-price">
+      <div class="fs-3 fw-bold">
+        Preu Pressuposat:
+      </div>
+      <div class="total-budget">
+        {{ totalBudget }} <span>€</span>
+      </div>
+    </div>
+
+    <!-- Datos del cliente -->
+    <div class="shadow rounded-4 p-3 py-md-5">
+      <div class="fs-3 fw-bold mb-2">
+        Demanar Pressupostos
+      </div>
+
+      <div class="row">
+
+        <div class="col-12 col-lg-9">
+          <div class="row">
+            <!-- Nombre del cliente -->
+            <div class="col-12 col-md-4 mb-3">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="clientName" placeholder="Nom" formControlName="clientName"
+                  required [class.is-valid]="isValidField('clientName')"
+                  [class.is-invalid]="!isValidField('clientName') && formSubmitted"
+                  (input)="onInputChange('clientName')" />
+                <label class="" for="clientName">Nom</label>
+              </div>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="col-12 col-md-4 mb-3">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="phone" placeholder="Telèfon" formControlName="phone"
+                  required [class.is-valid]="isValidField('phone')"
+                  [class.is-invalid]="!isValidField('phone') && formSubmitted" (input)="onInputChange('phone')" />
+                <label class="" for="phone">Telèfon</label>
+              </div>
+            </div>
+
+            <!-- Correo electrónico -->
+            <div class="col-12 col-md-4 mb-3">
+              <div class="form-floating">
+                <input type="email" class="form-control" id="email" placeholder="name@example.com"
+                  formControlName="email" required [class.is-valid]="isValidField('email')"
+                  [class.is-invalid]="!isValidField('email') && formSubmitted" (input)="onInputChange('email')" />
+                <label class="" for="email">Email</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-3">
+          <div>
+            <button type="submit" class="btn btn-primary py-3">Sol·licitar pressupost</button>
+          </div>
+        </div>
+      </div>
+
+      @if(showError && !isCheckboxSelected){
+      <div class="mt-2 text-danger">
+        Si us plau Seleccioni un Servei
+      </div>
+      }
+      @if(!isValidField('clientName') && formSubmitted){
+      <div class="mt-2 text-danger">
+        El nom és requerit requerit
+      </div>
+      }
+
+      @if(!isValidField('phone') && formSubmitted){
+      <div class="mt-2 text-danger">
+        El telèfon és requerit
+      </div>
+      }
+
+      @if(!isValidField('email') && formSubmitted){
+      <div class="mt-2 text-danger">
+        L'email és requerit requerit i ha de ser un correu electrònic vàlid
+      </div>
+      }
+    </div>
+
+
+    <!-- Lista de presupuestos -->
+    @if (budgets.length >0){
+    <div class="mt-5">
+
+      <hr>
+
+      <div class="fs-3 fw-bold mt-4">
+        Pressupostos en curs:
+      </div>
+
+      <div class="position-relative mt-2 mb-4">
+        <div class="mx-auto" [class.active]="searchInputValue === 'focused'" id="searchContainer">
+          <span id="searchIcon"><img src="./../../assets/search.svg" alt="" width="30px"></span>
+          <input formControlName="searchInput" id="searchInput" type="text" placeholder="Buscar por nombre..."
+            (focus)="onSearchInputFocus()" (blur)="onSearchInputBlur()" (input)="searchBudgets()">
+        </div>
+
+        <div class="sortBudgets end-0 top-0 d-flex justify-content-center align-items-center h-100 mt-3 mt-lg-0">
+          <a type="button" class="btn" (click)="sortBudgetsDate()">Data <i
+              [ngStyle]="{'width': '30px', 'display': 'inline-block'}" class="fas" [ngClass]="{'fa-solid fa-chevron-up': sortBy === 'date' && sortDirection === 'asc',
+                'fa-solid fa-chevron-down': sortBy === 'date' && sortDirection === 'desc'}"></i></a>
+          <a type="button" class="btn" (click)="sortBudgetsTotal()">Import <i
+              [ngStyle]="{'width': '30px', 'display': 'inline-block'}" class="fas" [ngClass]="{'fa-solid fa-chevron-up': sortBy === 'totalBudget' && sortDirection === 'asc',
+                'fa-solid fa-chevron-down': sortBy === 'totalBudget' && sortDirection === 'desc'}"></i></a>
+          <a type="button" class="btn" (click)="sortBudgetsName()">Nom <i
+              [ngStyle]="{'width': '30px', 'display': 'inline-block'}" class="fas" [ngClass]="{'fa-solid fa-chevron-up': sortBy === 'clientName' && sortDirection === 'asc',
+                'fa-solid fa-chevron-down': sortBy === 'clientName' && sortDirection === 'desc'}"></i></a>
+        </div>
+      </div>
+
+      <div class="card-services">
+
+        @for(budget of filteredBudgets; track budget.clientName){
+        <div
+          class="shadow rounded-4 p-3 py-md-5 px-3 d-flex justify-content-between flex-column flex-md-row gap-3 flex-md-wrap flex-lg-nowrap">
+          <div class="">
+            <p class="fs-4 fw-bold mb-1">{{ budget.clientName }}</p>
+            <p class="mb-0">{{ budget.phone }}</p>
+            <p class="mb-0">{{ budget.email }}</p>
+          </div>
+
+          <div>
+            <p class="fw-bold mb-1">Data</p>
+            <!-- <p>{{ budget.date | date:'dd MMMM yyyy hh:mm a' }}</p> -->
+            <p class="mb-0">{{ budget.date | date:'dd/MM/yy hh:mm a' }}</p>
+          </div>
+
+          <div>
+            <p class="fw-bold mb-1">Servicios contratados:</p>
+            <ul class="mb-0">
+
+              @if(budget.seoCampaign){
+              <li>SEO</li>
+              }
+
+              @if(budget.adsCampaign){
+              <li>Ads</li>
+              }
+
+              @if(budget.webCampaign){
+              <li class="mb-0">
+                Web ( {{ budget.webCampaignObj.numberOfPagesTotal }} pàgines,
+                {{ budget.webCampaignObj.numberOfLanguagesTotal }}
+                llenguatges )
+              </li>
+              }
+
+            </ul>
+          </div>
+
+          <div class="fw-bold mb-1">
+            <p class="mb-1">Total:</p>
+            <p class="fs-3 fw-bold mb-0">{{ budget.totalBudget }} €</p>
+          </div>
+        </div>
+        }
+
+      </div>
+    </div>
+    }
+  </form>
+
+</div>

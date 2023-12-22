@@ -1,0 +1,34 @@
+<!-- modal.component.html -->
+
+<div #exampleModal class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      @if(contentType === 'numberOfPages'){
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Nombre de Pàgines</h1>
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <p>Afegeix les pàgines que tendrà el teu projecte.</p>
+        <p>El cost de cada pàgina és de 30€.</p>
+      </div>
+      }
+
+      @if(contentType === 'numberOfLanguages'){
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Nombre de llenguatges</h1>
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <p>Afegeix els llenguatges que tendrà el teu projecte.</p>
+        <p>El cost de cada llenguatge és de 30€.</p>
+      </div>
+      }
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

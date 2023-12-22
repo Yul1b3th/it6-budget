@@ -1,0 +1,44 @@
+<!-- panel.component.html -->
+
+<app-modal [content]="modalContent" (openModalEvent)="openModal($event)"></app-modal>
+
+<div class="panel">
+  <form [formGroup]="panelForm">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-auto p-0">
+          <button type="button" class="btn btn-primary rounded-circle btn-info-modal me-2"
+            (click)="openModal('numberOfPages')">ℹ️</button>
+          <label for="numberOfPages">Nombre de Pàgines:</label>
+        </div>
+        <div class="col-auto">
+          <div class="input-group">
+            <button class="btn btn-outline-primary" type="button" (click)="decrementPages()">-</button>
+            <input class="form-control small-input" type="number" id="numberOfPages" formControlName="numberOfPages"
+              min="1" max="99" step="1" (input)="emitSendForm(); validatorInput($event)" placeholder="0" />
+            <button class="btn btn-outline-primary" type="button" (click)="incrementPages()">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-auto p-0">
+          <button type="button" class="btn btn-primary rounded-circle btn-info-modal me-2"
+            (click)="openModal('numberOfLanguages')">ℹ️</button>
+          <label for="numberOfLanguages">Nombre de llenguatges:</label>
+        </div>
+        <div class="col-auto">
+          <div class="input-group">
+            <button class="btn btn-outline-primary" type="button" (click)="decrementLanguages()">-</button>
+            <input class="form-control small-input" type="number" id="numberOfLanguages"
+              formControlName="numberOfLanguages" min="1" max="99" step="1"
+              (input)="emitSendForm(); validatorInput($event)" placeholder="0" />
+            <button class="btn btn-outline-primary" type="button" (click)="incrementLanguages()">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

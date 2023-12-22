@@ -1,0 +1,62 @@
+.container {
+  max-width: 740px;
+}
+
+.card-services {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.service-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-text {
+  max-width: 300px;
+}
+
+.service-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  gap: 0.1rem;
+}
+
+.service-price .euro {
+  font-size: 1.5rem;
+  font-weight: 500;
+  position: relative;
+  bottom: -3px;
+}
+
+.service-check {
+  grid-area: check-service;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.budget-price {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin: 2rem 0;
+  gap: 0.9rem;
+}
+
+.total-budget {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.total-budget span {
+  font-size: 1.5rem;
+  font-weight: 500;
+  position: relative;
+  bottom: -3px;
+}/*# sourceMappingURL=budgets-list.component.css.map */

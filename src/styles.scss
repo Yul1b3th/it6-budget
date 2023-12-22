@@ -1,0 +1,18 @@
+@import url('../src/assets/libs/fonts.css');
+
+// Variable overrides first
+$primary: #ffb727;
+/* $enable-shadows: true;
+$prefix: "mo-"; */
+$font-family-sans-serif: 'BeVietnamPro', sans-serif;
+// Then import Bootstrap
+
+$gradient: linear-gradient(0deg, rgba(246, 246, 246, 1) 0%, rgb(255 252 247) 100%);
+$gradient: linear-gradient(to right top, #ffb727, #ffc75c, #ffd788, #ffe6b4, #fff4df);
+$gradient: linear-gradient(to right top, #ffb727, #ff8d4c, #ff6283, #ff51c3, #d769ff);
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Utilizando el selector :last-child
+p:last-child {
+  margin-bottom: 0;
+}

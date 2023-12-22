@@ -1,0 +1,138 @@
+.container {
+  max-width: 960px;
+}
+
+.card-services {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.service-item {}
+
+.service-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-text {
+  max-width: 300px;
+}
+
+.service-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  gap: 0.1rem;
+}
+
+.service-price .euro {
+  font-size: 1.5rem;
+  font-weight: 500;
+  position: relative;
+  bottom: -3px;
+}
+
+.service-check {
+  grid-area: check-service;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+
+
+}
+
+.budget-price {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin: 2rem 0;
+  gap: 0.9rem;
+}
+
+.total-budget {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.total-budget span {
+  font-size: 1.5rem;
+  font-weight: 500;
+  position: relative;
+  bottom: -3px;
+}
+
+.service-item-selected {
+  border: 1px solid #198754;
+}
+
+.is-invalid-check {
+  border: 1px solid #dc3545;
+}
+
+#searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  width: 150px;
+  transition: width 0.3s;
+  background: red;
+}
+
+
+#searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  width: 150px;
+  transition: width 0.3s;
+}
+
+#searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  flex: 1;
+  padding: 0 10px;
+  font-size: 16px;
+  width: 100%;
+}
+
+#searchIcon {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+#searchContainer.active {
+  width: 250px;
+}
+
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .sortBudgets {
+    position: absolute;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}

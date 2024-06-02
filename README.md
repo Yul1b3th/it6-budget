@@ -55,9 +55,10 @@ Este repositorio contiene los recursos de un proyecto web para la gestión de pr
 
 ## ▶️ Ejecución 
 Ejecuta la aplicación con el siguiente comando:
-    ```bash
-    ng serve -o
-    ```
+```bash
+ng serve -o
+```
+
 
 ## 🤝 Contribuciones 
 

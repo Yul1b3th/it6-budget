@@ -1,14 +1,14 @@
 # Budget
 
-## Descripción 📄
+## 📄 Descripción
 
 Este repositorio contiene los recursos de un proyecto web para la gestión de presupuestos, desarrollado en Angular 17. La aplicación permite a los usuarios solicitar presupuestos para servicios de SEO, publicidad (Ads) y desarrollo web, calculando automáticamente el coste total en función de las opciones seleccionadas. Además, incluye una lista de presupuestos en curso con funciones de filtrado y ordenación.
 
-## Demo 🚀
+## 🚀 Demo
 
 [Budget](https://yul1b3th.github.io/it6-budget)
 
-## Características ✨
+## ✨ Características
 
 - **Selección de Servicios**: Los usuarios pueden seleccionar servicios de SEO, Ads y desarrollo web, con la capacidad de personalizar opciones específicas para el desarrollo web.
 
@@ -20,50 +20,46 @@ Este repositorio contiene los recursos de un proyecto web para la gestión de pr
 
 - **Diseño Responsive**: La interfaz de usuario está diseñada para ser compatible con diferentes dispositivos y tamaños de pantalla.
 
-## Tecnologías Utilizadas 💻
+## 💻 Tecnologías Utilizadas 
 
 - TypeScript
 - HTML5
 - SCSS (Bootstrap)
 - Angular
 
-## Requisitos 📋
+## 📋 Requisitos
 
 - Node.js y npm instalados en tu sistema. Puedes descargarlos desde [nodejs.org](https://nodejs.org/).
 - Angular CLI instalado globalmente. Puedes instalarlo con el siguiente comando:
 
   ```bash
   npm install -g @angular/cli
+  ```
 
 
-## Instalación 🛠️
+## 🛠️ Instalación 
 1. Clona el repositorio:
-```bash
-git clone https://github.com/Yul1b3th/it-budget.git
-```
+    ```bash
+    git clone https://github.com/Yul1b3th/it6-budget.git
+    ```
 
 2. Ingresa al directorio del proyecto:
-```bash
-cd it-budget
-```
+    ```bash
+    cd it6-budget
+    ```
 
 3. Instala las dependencias:
-```bash
-npm install
-```
+    ```bash
+    npm install
+    ```
 
-4. Instala Bootstrap para los estilos adicionales:
-```bash
-npm i bootstrap@5.3.2
-```
-
-## Ejecución ▶️
+## ▶️ Ejecución 
 Ejecuta la aplicación con el siguiente comando:
-```bash
-ng serve
-```
+    ```bash
+    ng serve -o
+    ```
 
-## Contribuciones 🤝
+## 🤝 Contribuciones 
 
 Si deseas colaborar en este proyecto o informar sobre problemas, no dudes en crear un "issue" o enviar un "pull request."
 

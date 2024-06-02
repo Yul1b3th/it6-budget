@@ -50,7 +50,8 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/it6-budget/"
             },
             "development": {
               "optimization": false,

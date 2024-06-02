@@ -1,4 +1,4 @@
-@import url('../src/assets/libs/fonts.css');
+@import url('assets/libs/fonts.css');
 
 // Variable overrides first
 $primary: #ffb727;
@@ -14,5 +14,5 @@ $gradient: linear-gradient(to right top, #ffb727, #ff8d4c, #ff6283, #ff51c3, #d7
 
 // Utilizando el selector :last-child
 p:last-child {
-  margin-bottom: 0;
+ margin-bottom: 0;
 }

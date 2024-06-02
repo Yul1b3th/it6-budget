@@ -6,7 +6,7 @@ Este repositorio contiene los recursos de un proyecto web para la gestión de pr
 
 ## Demo 🚀
 
-[Budget](https://yul1b3th.github.io/it-budget)
+[Budget](https://yul1b3th.github.io/it6-budget)
 
 ## Características ✨
 
